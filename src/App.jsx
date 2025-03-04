@@ -1,5 +1,8 @@
+// import { BrowserRouter as Router, Route, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+// import LaunchesList from "./pages/LaunchesList";
+// import LaunchDetails from "./pages/LaunchDetails";
 // import Home from "./pages/Home";
 // import Launches from "./pages/LaunchList";
 
@@ -23,16 +26,29 @@ function App() {
  
   // },[])
 
-  return (
-    <>
-    <div className='container'>
-      <Navbar/>
-    </div>
-      <h1>SpaceXplorer</h1>
-      <h2>Search by location: Vanderberg AFB or Cape Canaveral</h2>
-      <Home/> 
-    </>
-  )
+//   return (
+//     <>
+//     <div className='container'>
+//       <Navbar/>
+//     </div>
+//       <Home/> 
+//     </>
+//   )
+// }
+return (
+  // <Router>
+  //   <Navbar />
+  //   <Routes>
+  //     <Route path="/" element={<Home />} />
+  //     <Route path="/launches" element={<LaunchesList />} />
+  //     {/* <Route path="/launch/:id" element={<LaunchDetails />} /> */}
+  //   </Routes>
+  // </Router>
+  
+  <>
+  <Home />
+  </>
+);
 }
 
 export default App

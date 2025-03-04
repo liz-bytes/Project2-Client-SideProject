@@ -1,4 +1,4 @@
-import { useState, UseFetchseEffect, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
  // Custom hook to fetch and display SpaceX launches data
 
@@ -28,5 +28,3 @@ import { useState, UseFetchseEffect, useEffect } from 'react';
   };
 
   export default UseFetch;
-
-

@@ -2,18 +2,12 @@ import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch.js";
 //import LaunchCard from "../components/LaunchCard.js";
 
-// const API_URL = "https://api.spacexdata.com/v5/launches";
-
-// // Launchpad IDs for filtering
-// const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
-// const CCSFS_ID = "5e9e4502f509094188566f88"; // Cape Canaveral SFS
-
 function Home() {
   const API_URL = "https://api.spacexdata.com/v5/launches";
   const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
   const CCSFS_ID = "5e9e4502f509094188566f88"; 
   const { data: launches = [], loading, error } = useFetch(API_URL); //  Fetch launches
-  const [filteredLaunches, setFilteredLaunches] = useState([]); // Initially empty
+  const [filteredLaunches, setFilteredLaunches] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(""); // Track selected location
 
   // Update filtered launches when location or launches change
@@ -23,6 +17,7 @@ function Home() {
         selectedLocation === "VSFB"
           ? launch.launchpad === VSFB_ID
           : launch.launchpad === CCSFS_ID
+
       );
       setFilteredLaunches(filtered);
     }
@@ -50,9 +45,20 @@ function Home() {
           filteredLaunches.map(launch => (
             <div key={launch.id} style={{ marginBottom: '20px' }}>
               <h3>Name of the Launch: {launch.name}</h3>
-              <p>Launch Date: {launch.date_utc}</p>
-              <p>Details: {launch.details}</p>
-              <p>Rocket: {launch.rocket}</p>
+              <p> Mission Patch</p>
+              {launch.links && launch.links.patch && (
+                <div>
+                  <img
+                    src={launch.links.patch.small}
+                    alt={`Patch for ${launch.name}`}
+                    style={{ width: '100px', height: 'auto' }}
+                  />
+                </div>
+              )}
+              {/* <p>Launch Date: {launch.date_utc}</p>
+              <p>Details: {launch.details}</p> */}
+              {/* <p>Details: {launch.details || "No details available"}</p> */}
+              {/* <p>Rocket: {launch.rocket}</p>
               <p>Launchpad: {launch.launchpad}</p>
               <p>Success: {launch.success ? 'Yes' : 'No'}</p>
               <p>Flight Number: {launch.flight_number}</p>
@@ -62,17 +68,17 @@ function Home() {
               {launch.links && launch.links.patch && (
                 <div>
                   <img
-                    src={launch.links.patch.small} // Assuming `small` is the patch URL
+                    src={launch.links.patch.small}
                     alt={`Patch for ${launch.name}`}
                     style={{ width: '100px', height: 'auto' }}
                   />
                 </div>
               )}
-              <p>---------------------------------</p>
+              <p>---------------------------------</p> */}
             </div>
           ))
         ) : (
-          selectedLocation && <p>No launches available for this location.</p> // Show message only if a location is selected and no launches are found
+          selectedLocation && <p>No launches available for this location.</p> 
         )}
       </div>
     </>
