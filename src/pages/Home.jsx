@@ -1,95 +1,19 @@
 import { useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch.js"
-
-
-// “Vandenberg”, “5e9e4501f5090910d4566f83", “5e9e4502f509092b78566f87”|  Cape Canaveral “5e9e4501f509094ba4566f84", “5e9e4502f509094188566f88”
-
-//const API_URL = "https://api.spacexdata.com/v5/launches";
-
-function Home(){
-  const API_URL = "https://api.spacexdata.com/v5/launches";
-  const launches = useFetch(API_URL); // Fetch all launches   
-  //const { data: launches = [], loading, error } = useFetch(API_URL);
-
-  console.log(launches);
-  const [filteredLaunches, setFilteredLaunches] = useState([]); // Initially empty
-  const [selectedLocation, setSelectedLocation] = useState(''); // State for selected location
-
-  const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
-  const CCSFS_ID = "5e9e4502f509094188566f88"; // Cape Canaveral Space Force Station
-
-// there is an issue here.
-  
-  useEffect(()=>{
-    if (launches.length > 0) {
-      // Initial filter if a location is already selected
-      handleLocationChange({ target: { value: selectedLocation } });
-    }
-  }, [launches, selectedLocation]);
-
-  const handleLocationChange = (event) => {
-    const selectedLocation = event.target.value;
-
-//     React state updates asynchronously, so selectedLocation does not update immediately.
-// Fix: Instead of reading selectedLocation immediately, use event.target.value directly in filtering. 
-
-
-    setSelectedLocation(selectedLocation); // Update selected location
-
-    // Filter launches based on the selected launchpad ID
-    let filtered;
-    if (selectedLocation === 'VSFB') {
-      filtered = launches.filter(launch => launch.launchpad === VSFB_ID);
-    } else if (selectedLocation === 'CCSFS') {
-      filtered = launches.filter(launch => launch.launchpad === CCSFS_ID);
-    
-    setFilteredLaunches(filtered); // Update the filtered launches state
-  };
-
-  return(
-    <> 
-      <h1>SpaceXplorer</h1>
-      <h2>Search by location: Vandenberg SFB or Cape Canaveral</h2>
-
-      <select value={selectedLocation} onChange={handleLocationChange}>
-        <option value="">Select a location</option>
-        <option value="VSFB">Vandenberg SFB</option>  
-  {/* This should match the expected value inside handleLocationChange(), which is "CCSFS" */}
-        <option value="CCSFB">Cape Canaveral SFB</option>  
-      </select>
-
-      <div>
-          {selectedLocation && filteredLaunches.length>0 ? (
-          filteredLaunches.map(launch => (
-            <div key={launch.id} style={{marginBottom: '20px'}}>
-              <h3>{launch.name}</h3>
-              <p>{launch.details}</p>
-            </div>
-          ))
-          // This does not handle filteredLaunches.length === 0 properly.
-// Fix: Ensure it only displays when selectedLocation is chosen and there are no matching launches.
-        ) : (selectedLocation && <p> No launch history available.</p>)
-          } 
-      </div>
-    </>
-  )
-}
-
-export default Home;
-
-
-// import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch.js";
+//import LaunchCard from "../components/LaunchCard.js";
 
-const API_URL = "https://api.spacexdata.com/v5/launches";
+// const API_URL = "https://api.spacexdata.com/v5/launches";
 
-// Launchpad IDs
-const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
-const CCSFS_ID = "5e9e4502f509094188566f88"; // Cape Canaveral Space Force Station
+// // Launchpad IDs for filtering
+// const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
+// const CCSFS_ID = "5e9e4502f509094188566f88"; // Cape Canaveral SFS
 
 function Home() {
-  const { data: launches = [], loading, error } = useFetch(API_URL); // ✅ Ensure launches is always an array
-  const [filteredLaunches, setFilteredLaunches] = useState([]); // ✅ Empty array by default
+  const API_URL = "https://api.spacexdata.com/v5/launches";
+  const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
+  const CCSFS_ID = "5e9e4502f509094188566f88"; 
+  const { data: launches = [], loading, error } = useFetch(API_URL); //  Fetch launches
+  const [filteredLaunches, setFilteredLaunches] = useState([]); // Initially empty
   const [selectedLocation, setSelectedLocation] = useState(""); // Track selected location
 
   // Update filtered launches when location or launches change
@@ -102,7 +26,7 @@ function Home() {
       );
       setFilteredLaunches(filtered);
     }
-  }, [selectedLocation, launches]); // ✅ Runs when location or data changes
+  }, [selectedLocation, launches]);
 
   return (
     <> 
@@ -123,14 +47,32 @@ function Home() {
       {/* Display filtered launches safely */}
       <div>
         {selectedLocation && filteredLaunches.length > 0 ? (
-          filteredLaunches.map((launch) => (
-            <div key={launch.id} style={{ marginBottom: "20px" }}>
-              <h3>{launch.name}</h3>
-              <p>{launch.details || "No details available."}</p>
+          filteredLaunches.map(launch => (
+            <div key={launch.id} style={{ marginBottom: '20px' }}>
+              <h3>Name of the Launch: {launch.name}</h3>
+              <p>Launch Date: {launch.date_utc}</p>
+              <p>Details: {launch.details}</p>
+              <p>Rocket: {launch.rocket}</p>
+              <p>Launchpad: {launch.launchpad}</p>
+              <p>Success: {launch.success ? 'Yes' : 'No'}</p>
+              <p>Flight Number: {launch.flight_number}</p>
+              <p>Upcoming: {launch.upcoming ? 'Yes' : 'No'}</p>
+
+              <p> Mission Patch</p>
+              {launch.links && launch.links.patch && (
+                <div>
+                  <img
+                    src={launch.links.patch.small} // Assuming `small` is the patch URL
+                    alt={`Patch for ${launch.name}`}
+                    style={{ width: '100px', height: 'auto' }}
+                  />
+                </div>
+              )}
+              <p>---------------------------------</p>
             </div>
           ))
         ) : (
-          selectedLocation && <p>No launch history available.</p>
+          selectedLocation && <p>No launches available for this location.</p> // Show message only if a location is selected and no launches are found
         )}
       </div>
     </>

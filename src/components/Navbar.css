@@ -17,4 +17,5 @@ ul li{
     margin-left: 10px 20px;
     font-size: 1em;
     cursor: pointer;
+    justify-items: space-between;
 }
