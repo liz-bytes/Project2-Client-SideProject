@@ -1,6 +1,7 @@
 import React from "react";
+import './LaunchCard.css'
 
-function LaunchCard({ launch, handleGoBack }) {
+function LaunchCard({ launch, onBack }) {
   return (
     <div>
       <h3>Name of the Launch: {launch.name}</h3>
@@ -8,27 +9,57 @@ function LaunchCard({ launch, handleGoBack }) {
       <p>Details: {launch.details || "No details available"}</p>
       <p>Rocket: {launch.rocket}</p>
       <p>Launchpad: {launch.launchpad}</p>
-      <p>Success: {launch.success ? 'Yes' : 'No'}</p>
+      <p>Success: {launch.success ? "Yes" : "No"}</p>
       <p>Flight Number: {launch.flight_number}</p>
-      <p>Upcoming: {launch.upcoming ? 'Yes' : 'No'}</p>
+      <p>Upcoming: {launch.upcoming ? "Yes" : "No"}</p>
 
-      <p>Mission Patch</p>
-      {launch.links && launch.links.patch && (
-        <div>
-          <img
-            src={launch.links.patch.small}
-            alt={`Patch for ${launch.name}`}
-            style={{ width: '100px', height: 'auto' }}
-          />
-        </div>
+      {launch.links?.patch?.small && (
+        <img src={launch.links.patch.small} alt={`Patch for ${launch.name}`} style={{ width: '100px' }} />
       )}
 
-      <button onClick={handleGoBack}>Go Back</button>
+      <br />
+      <br />
+
+      <div className="go-back-btn">
+      <button onClick={onBack} className="space-button">Go Back</button>
+    </div>
     </div>
   );
 }
 
 export default LaunchCard;
+
+// import React from "react";
+
+// function LaunchCard({ launch, handleGoBack }) {
+//   return (
+//     <div>
+//       <h3>Name of the Launch: {launch.name}</h3>
+//       <p>Launch Date: {new Date(launch.date_utc).toLocaleString()}</p>
+//       <p>Details: {launch.details || "No details available"}</p>
+//       <p>Rocket: {launch.rocket}</p>
+//       <p>Launchpad: {launch.launchpad}</p>
+//       <p>Success: {launch.success ? 'Yes' : 'No'}</p>
+//       <p>Flight Number: {launch.flight_number}</p>
+//       <p>Upcoming: {launch.upcoming ? 'Yes' : 'No'}</p>
+
+//       <p>Mission Patch</p>
+//       {launch.links && launch.links.patch && (
+//         <div>
+//           <img
+//             src={launch.links.patch.small}
+//             alt={`Patch for ${launch.name}`}
+//             style={{ width: '100px', height: 'auto' }}
+//           />
+//         </div>
+//       )}
+
+//       <button onClick={handleGoBack}>Go Back</button>
+//     </div>
+//   );
+// }
+
+// export default LaunchCard;
 
 
 // <div>

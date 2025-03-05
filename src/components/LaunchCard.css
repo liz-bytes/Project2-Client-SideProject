@@ -1,0 +1,18 @@
+
+
+.space-button {
+
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8));
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .space-button:hover {
+    transform: scale(1.05);
+  }

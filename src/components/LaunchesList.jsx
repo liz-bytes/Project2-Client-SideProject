@@ -1,95 +1,114 @@
-import React from "react";
-import LaunchCard from "./LaunchCard";
+// import React from "react";
+// import LaunchCard from "./LaunchCard";
 
-function LaunchesList({ launches, loading, error, handleLaunchClick }) {
-  return (
-    <div>
-      {loading && <p>Loading launches...</p>}
-      {error && <p>Error fetching launches: {error}</p>}
-
-      {launches.length > 0 ? (
-        launches.map((launch) => (
-          <div key={launch.id} style={{ marginBottom: '20px' }}>
-            <h3>{launch.name}</h3>
-            <p>Mission Patch</p>
-            {launch.links && launch.links.patch && (
-              <div>
-                <img
-                  src={launch.links.patch.small}
-                  alt={`Patch for ${launch.name}`}
-                  style={{ width: '100px', height: 'auto', cursor: 'pointer' }}
-                  onClick={() => handleLaunchClick(launch)}  // On click, pass the selected launch
-                />
-              </div>
-            )}
-          </div>
-        ))
-      ) : (
-        <p>No launches available for this location.</p>
-      )}
-    </div>
-  );
-}
-
-export default LaunchesList;
-
-// import { useContext } from "react";
-// import { LaunchesContext } from "../LaunchesContext";
-// import LaunchCard from "../components/LaunchCard";
-
-// const LaunchesList = () => {
-//   const { filteredLaunches } = useContext(LaunchesContext);
-
+// function LaunchesList({ launches, loading, error, handleLaunchClick }) {
 //   return (
 //     <div>
-//       {filteredLaunches.length > 0 ? (
-//         filteredLaunches.map((launch) => <LaunchCard key={launch.id} launch={launch} />)
+//       {loading && <p>Loading launches...</p>}
+//       {error && <p>Error fetching launches: {error}</p>}
+
+//       {launches.length > 0 ? (
+//         launches.map((launch) => (
+//           <div key={launch.id} style={{ marginBottom: '20px' }}>
+//             <h3>{launch.name}</h3>
+//             <p>Mission Patch</p>
+//             {launch.links && launch.links.patch && (
+//               <div>
+//                 <img
+//                   src={launch.links.patch.small}
+//                   alt={`Patch for ${launch.name}`}
+//                   style={{ width: '100px', height: 'auto', cursor: 'pointer' }}
+//                   onClick={() => handleLaunchClick(launch)}  // On click, pass the selected launch
+//                 />
+//               </div>
+//             )}
+//           </div>
+//         ))
 //       ) : (
 //         <p>No launches available for this location.</p>
 //       )}
 //     </div>
 //   );
-// };
+// }
 
 // export default LaunchesList;
+import { useContext } from "react";
+import { LaunchesContext } from "../context/LaunchesContext";
+import LaunchCard from "./LaunchCard";
+import './LaunchesList.css';
+import { useNavigate } from "react-router-dom";
 
-// import React, { useState, useEffect } from "react";
-// import LaunchCard from "./LaunchCard";
 
 
-// const LaunchesList = ({ onSelectPokemon }) => {
-//   const [pokemonList, setPokemonList] = useState([]);
-//   const [loading, setLoading] = useState(true);
+function LaunchesList({ handleLaunchClick }) {
+  const { filteredLaunches, isLoading, error } = useContext(LaunchesContext);
+  const navigate = useNavigate(); //  Hook to navigate back
 
-//   useEffect(() => {
-//     const fetchPokemonData = async () => {
-//       const response = await fetch(
-//         "https://pokeapi.co/api/v2/pokemon?limit=151"
-//       );
-//       const data = await response.json();
-//       setPokemonList(data.results);
-//       setLoading(false);
-//     };
+// function LaunchesList({ handleLaunchClick, handleGoBack, onBack} ) {
+//   const { filteredLaunches, isLoading, error } = useContext(LaunchesContext);
 
-//     fetchPokemonData();
-//   }, []);
+// const handleGoBack = () => {
+//     setSelectedLocation("");
+//     // setSelectedLaunch(null);
+//   };
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
+// const navigate = useNavigate();
 
-//   return (
-//     <div className="pokemon-list pokemon-grid">
-//       {pokemonList.map((pokemon, index) => (
-//         <PokemonCard
-//           key={index}
-//           name={pokemon.name}
-//           url={pokemon.url}
-//           onSelect={onSelectPokemon}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
+// const handleGoBackToLocations = () => {
+  // setSelectedLocation("");
 
-// export default PokemonList;
+  // return (
+
+    return (
+      <>
+      <div className="container-launch">
+
+        <button onClick={() => navigate("/launches")} className="go-back-btn">
+          Go Back
+        </button>
+</div>
+
+    {/* <button onClick={() => navigate(-1)}>Go Back</button> */}
+      {/* <button onClick={onBack}>Go Back to Location</button> */}
+    <div className= "container-launch">
+      {isLoading && <p>Loading launches...</p>}
+      {error && <p>Error fetching launches: {error}</p>}
+
+
+      {filteredLaunches.length > 0 ? (
+        filteredLaunches.map((launch) => (
+          <div
+          className="card-launch"
+          key={launch.id}
+          onClick={() => handleLaunchClick(launch)}
+           >
+            <h3 className="card-title">{launch.name} </h3>
+
+            {launch.links?.patch?.small && (
+              <img
+                src={launch.links.patch.small}
+                alt={`Patch for ${launch.name}`}
+                className="launch-image"
+
+              />
+            )}
+          </div>
+
+        ))
+      ) : (
+        <p>No launches available for this location.</p>
+
+        // <>{selectedLaunch ? (
+        //   <LaunchCard launch={selectedLaunch} onBack={handleGoBack} />
+        // ) : (
+        //   <LaunchesList handleLaunchClick={setSelectedLaunch} />
+        // )}
+        // </>
+      )}
+
+    </div>
+    </>
+  );
+}
+
+export default LaunchesList;

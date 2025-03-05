@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Overall app container with space theme styling */
+.space-theme {
+  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  padding: 20px;
+}
+
+/* Header styling */
+.space-theme h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Container for the location options */
+.location-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for each clickable location */
+.location {
+  cursor: pointer;
+  margin-right: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Remove right margin from the last location */
+.location:last-child {
+  margin-right: 0;
+}
+
+/* Image styling for launch locations */
+.location img {
+  width: 150px;
+  height: 200px;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Text styling below each image */
+.location p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+/* Hover effect for locations */
+.location:hover {
+  transform: scale(1.05);
+}
+
+/* Styling for loading and error messages */
+.space-theme p {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Launch card component styling */
+.launch-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure the body has a matching space-like background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #090a0f;
+}
