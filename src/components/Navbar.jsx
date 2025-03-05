@@ -1,15 +1,22 @@
 import React from 'react';
 import './Navbar.css';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = ({ onClick }) => {
+function Navbar () {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <nav className="navbar">
       <h4>Navbar</h4>
       <ul>
-        <li><button onClick={() => onClick('Home')}>Home</button></li>
-        <li><button onClick={() => onClick('About')}>About</button></li>
-        <li><button onClick={() => onClick('Launches')}>Launches</button></li>
-        <li><button onClick={() => onClick('Gallery')}>Gallery</button></li>
+        <li><button onClick={() => handleNavigation('/Home')}>Home</button></li>
+        <li><button onClick={() => handleNavigation('/About')}>About</button></li>
+        <li><button onClick={() => handleNavigation('/Launches')}>Launches</button></li>
+        <li><button onClick={() => handleNavigation('/Gallery')}>Gallery</button></li>
       </ul>
     </nav>
   );

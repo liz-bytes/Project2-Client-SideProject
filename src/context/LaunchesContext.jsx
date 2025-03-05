@@ -20,3 +20,22 @@
 //     Multiple components need access to the same state (e.g., user authentication, themes, API data).
 //     Avoiding prop drilling (passing data through many components).
 //     Centralizing state management without using a third-party library like Redux.
+
+
+import { createContext, useState } from "react";
+import useFetch from "../hooks/useFetch.js";
+
+export const LaunchesContext = createContext();
+
+export const LaunchesProvider = ({ children }) => {
+  const {data: launches, isLoading, error } = useFetch("https://api.spacexdata.com/v4/launches");
+  const [filteredLaunches, setFilteredLaunches] = useState([]);
+
+  return (
+    <LaunchesContext.Provider value={{ launches, isLoading, error, filteredLaunches, setFilteredLaunches }}>
+      {children}
+    </LaunchesContext.Provider>
+  );
+};
+
+// Usage in other components
