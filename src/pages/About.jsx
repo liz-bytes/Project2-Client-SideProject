@@ -12,8 +12,10 @@ const VandenbergLaunchpad =() => {
             className="card-image"
             />
             <p>
+
             Vandenberg Air Force Base in California serves as a major launch site for polar orbiting missions.
             It has a rich history in spaceflight and plays a key role in launching satellites into orbit.
+
              </p>
 
 

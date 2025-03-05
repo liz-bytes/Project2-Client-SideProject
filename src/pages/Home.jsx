@@ -34,7 +34,7 @@ const Home = () => {
         <div className="video-box">
             <video autoPlay loop muted className="side-video">
             <source src="/spacex-launch.webm" type="video/webm" />
-                <source src="/spacex-launch.mp4" type="video/mp4" />
+                {/* <source src="/spacex-launch.mp4" type="video/mp4" /> */}
                 Your browser does not support the video tag.
             </video>
         </div>
