@@ -1,4 +1,5 @@
 import React from "react";
+import LaunchCard from "./LaunchCard";
 
 function LaunchesList({ launches, loading, error, handleLaunchClick }) {
   return (

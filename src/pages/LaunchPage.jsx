@@ -66,7 +66,12 @@ function LaunchPage() {
             {showLaunchDetails?(
               <LaunchCard launch={showLaunchDetails} onBack={handleGoBack} />
             ):(
-              <LaunchesList launches {...filteredLaunches} loading={loading} error={error} handleLaunchClick={handleLaunchClick} />
+              <LaunchesList
+              launches={filteredLaunches}
+              loading={loading}
+              error={error}
+              handleLaunchClick={handleLaunchClick}
+              />
             )}
           </>
         )}

@@ -1,15 +1,15 @@
 
 import React from 'react';
-
+import './About.css'
 const VandenbergLaunchpad =() => {
   return(
         <>
-        <div className="launchpad-card">
-            <h2>Vandenberg Launchpad</h2>
+        <div className="card">
+            <h2 className='card-tittle'>Vandenberg USSF Base</h2>
             <img
             src="https://i.imgur.com/asp5L08.png"
             alt="Vandenberg Launchpad"
-            style={{ width: '100%', height: 'auto' }}
+            className="card-image"
             />
             <p>
             Vandenberg Air Force Base in California serves as a major launch site for polar orbiting missions.
@@ -27,12 +27,12 @@ const VandenbergLaunchpad =() => {
 
 const CapeCanaveral =() =>{
     return(
-        <div className="launchpad-card">
-        <h2>Cape Canaveral</h2>
+        <div className="card">
+      <h2 className="card-title">Cape Canaveral</h2>
         <img
         src="https://i.imgur.com/1jwU0Pk.png"
         alt="Cape Canaveral"
-        style={{ width: '100%', height: 'auto' }}
+        className="card-image"
         />
         <p>
         Cape Canaveral in Florida is a historic launch site used by both NASA and commercial entities.
@@ -46,7 +46,7 @@ const CapeCanaveral =() =>{
 
 const About = () => {
     return (
-      <div className="launch-locations" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+        <div className="container">
         <VandenbergLaunchpad />
         <CapeCanaveral />
       </div>
