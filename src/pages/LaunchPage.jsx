@@ -112,11 +112,11 @@ function LaunchPage() {
 
       {!selectedLocation ? (
         <div className="location-options">
-          <div onClick={() => handleLocationClick("VSFB")} style={{ cursor: 'pointer', marginRight: '20px' }}>
-            <img src="/Delta30.jpg" alt="Vandenberg SFB" style={{ width: '150px', height: '200px' }} />
+          <div onClick={() => handleLocationClick("VSFB")} className="location">
+            <img src="/Delta30.jpg" alt="Vandenberg SFB" />
             <p>Vandenberg SFB</p>
           </div>
-          <div onClick={() => handleLocationClick("CCSFS")} style={{ cursor: 'pointer' }}>
+          <div onClick={() => handleLocationClick("CCSFS")} className="location" >
             <img src="/Delta45.jpg" alt="Cape Canaveral SFS" style={{ width: '150px', height: '200px' }} />
             <p>Cape Canaveral SFS</p>
           </div>

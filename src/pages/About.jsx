@@ -5,7 +5,7 @@ const VandenbergLaunchpad =() => {
   return(
         <>
         <div className="card">
-            <h2 className='card-tittle'>Vandenberg USSF Base</h2>
+            <h2 className='card-tittle'>Vandenberg</h2>
             <img
             src="https://i.imgur.com/asp5L08.png"
             alt="Vandenberg Launchpad"

@@ -63,7 +63,7 @@ function LaunchesList({ handleLaunchClick }) {
       <>
       <div className="container-launch">
 
-        <button onClick={() => navigate("/launches")} className="go-back-btn">
+        <button onClick={() => navigate("/launches")} className="space-button">
           Go Back
         </button>
 </div>
