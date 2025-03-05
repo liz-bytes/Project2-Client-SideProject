@@ -4,8 +4,8 @@ import useFetch from "../hooks/useFetch.js";
 
 function Home() {
   const API_URL = "https://api.spacexdata.com/v5/launches";
-  const VSFB_ID = "5e9e4502f5090995de566f86"; // Vandenberg SFB
-  const CCSFS_ID = "5e9e4502f509094188566f88"; 
+  const VSFB_ID = '5e9e4502f5090995de566f86' && `5e9e4501f509094ba4566f84`; // Vandenberg SFB
+  const CCSFS_ID = `5e9e4502f509094188566f88` && `5e9e4502f509092b78566f87`;
   const { data: launches = [], loading, error } = useFetch(API_URL); //  Fetch launches
   const [filteredLaunches, setFilteredLaunches] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(""); // Track selected location
@@ -24,16 +24,24 @@ function Home() {
   }, [selectedLocation, launches]);
 
   return (
-    <> 
-      <h1>SpaceXplorer</h1>
-      <h2>Search by location: Vandenberg SFB or Cape Canaveral</h2>
-
-      {/* Dropdown for location selection */}
-      <select value={selectedLocation} onChange={(event) => setSelectedLocation(event.target.value)}>
-        <option value="">Select a location</option>
-        <option value="VSFB">Vandenberg SFB</option>  
-        <option value="CCSFS">Cape Canaveral SFS</option>  
-      </select>
+    <>
+      <h2>Space Force Launch Detlas</h2>
+      <div>
+        <div
+          onClick={() => setSelectedLocation("VSFB")}
+          style={{ cursor: 'pointer', display: 'inline-block', marginRight: '20px' }}
+        >
+          <img src="/Delta30.jpg" alt="Vandenberg SFB" style={{ width: '150px', height: '200px' }} />
+          <p>Vandenberg SFB</p>
+        </div>
+        <div
+          onClick={() => setSelectedLocation("CCSFS")}
+          style={{ cursor: 'pointer', display: 'inline-block' }}
+        >
+          <img src="/Delta45.jpg" alt="Cape Canaveral SFS" style={{ width: '150px', height: '200px' }} />
+          <p>Cape Canaveral SFS</p>
+        </div>
+      </div>
 
       {/* Show loading and error states */}
       {loading && <p>Loading launches...</p>}
@@ -78,7 +86,7 @@ function Home() {
             </div>
           ))
         ) : (
-          selectedLocation && <p>No launches available for this location.</p> 
+          selectedLocation && <p>No launches available for this location.</p>
         )}
       </div>
     </>

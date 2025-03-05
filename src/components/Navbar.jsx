@@ -1,20 +1,18 @@
-import React from "react";
+import React from 'react';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onClick }) => {
   return (
     <nav className="navbar">
-      
-      <h1>Navbar</h1>
-
+      <h4>Navbar</h4>
       <ul>
-        <Link to="/">Home</Link><li>Home</li>
-        <Link to="/launches">Launches</Link><li>Launches</li>
-        <li>Gallery</li>
-        <li>Settings</li>
+        <li><button onClick={() => onClick('Home')}>Home</button></li>
+        <li><button onClick={() => onClick('About')}>About</button></li>
+        <li><button onClick={() => onClick('Launches')}>Launches</button></li>
+        <li><button onClick={() => onClick('Gallery')}>Gallery</button></li>
       </ul>
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
