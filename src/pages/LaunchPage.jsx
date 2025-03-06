@@ -4,10 +4,13 @@ import LaunchesList from "../components/LaunchesList.jsx";
 import LaunchCard from "../components/LaunchCard.jsx";
 import './LaunchPage.css'
 
+
+
 function LaunchPage() {
   const { filteredLaunches, filterLaunches, isLoading, error } = useContext(LaunchesContext);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [selectedLaunch, setSelectedLaunch] = useState(null);
+
 
   const handleLocationClick = (location) => {
     setSelectedLocation(location);
@@ -25,11 +28,10 @@ function LaunchPage() {
   const handleGoBackToLocation = () => {
     setSelectedLocation(null);
   }
-
   return (
     <>
      <div className="space-theme">
-      <h2>Space Force Launches</h2>
+     {!selectedLocation && <h2>Space Force Launches</h2>}
 
       {!selectedLocation ? (
         <div className="location-options">
@@ -39,7 +41,7 @@ function LaunchPage() {
           </div>
 
           <div onClick={() => handleLocationClick("CCSFS")} className="location" >
-            <img src="/Delta45.jpg" alt="Cape Canaveral SFS" style={{ width: '150px', height: '200px' }} />
+            <img src="/Delta45.jpg" alt="Cape Canaveral SFS"  />
             <p>Cape Canaveral SFS</p>
           </div>
 

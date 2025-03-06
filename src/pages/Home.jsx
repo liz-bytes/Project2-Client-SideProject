@@ -48,14 +48,15 @@
 
 import React, { useEffect, useRef } from "react";
 import "./Home.css";
+import TodoLaunches from "../components/TodoLaunches"; // Import the component
 
 const Home = () => {
-  const videoRef = useRef(null); // Create a reference for the video element
+  const videoRef = useRef(null);
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.volume = 0.3; // Set volume to 30%
-      videoRef.current.muted = true; // Start muted
+      videoRef.current.volume = 0.3;
+      videoRef.current.muted = true;
       videoRef.current.play().catch(error => console.error("Video autoplay prevented", error));
     }
   }, []);
@@ -66,24 +67,20 @@ const Home = () => {
         <h1>Welcome to SpaceXplorer</h1>
       </div>
 
-      <div className="ContentContainer">
-        <div className="SubMessage">
-          <p>
-            Embark on a journey through the cosmos. <br />
-            Discover SpaceX's missions, technology, and incredible launches.
-          </p>
-        </div>
-
-        {/* Video starts muted but with volume set to 30% */}
-        <div className="video-box">
-          <video ref={videoRef} autoPlay loop muted controls>
-            {/* <source src="/spacex-launch.mov" type="video/mov" /> */}
-            <source src="/Spacex-Launch720.mp4" type="video/mp4" />
-            {/* <source src="/Spacex-Launch.webm" type="video/webm" /> */}
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <div className="video-box">
+        <video ref={videoRef} autoPlay loop muted controls className="main-video">
+          <source src="/Spacex-Launch720p.mp4" type="video/mp4" />
+          <source src="/Spacex-Launch720p.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
       </div>
+
+      <div className="SubMessage">
+        <p>Embark on a journey through the cosmos.<br />Discover SpaceX's missions, technology, and incredible launches.</p>
+      </div>
+
+      {/* Include the To-Do and Launch Tracker Component */}
+      <TodoLaunches />
     </div>
   );
 };

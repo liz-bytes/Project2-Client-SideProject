@@ -1,0 +1,60 @@
+.todo-launches-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.todo-section, .launch-section {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+}
+
+h2 {
+    color: #00d2ff;
+    margin-bottom: 15px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00d2ff;
+    color: black;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    cursor: pointer;
+}

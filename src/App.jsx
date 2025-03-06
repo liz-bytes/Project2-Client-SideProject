@@ -41,6 +41,7 @@ import LaunchPage from "./pages/LaunchPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
 //import LaunchesList from "./components/LaunchesList";
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Launches" element={<LaunchPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
     </Router>
   );
