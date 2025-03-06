@@ -35,28 +35,23 @@
 
 // export default App;
 
-// import LaunchPage from "./pages/LaunchPage";
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navbar from "./components/Navbar";
-// import Home from "./pages/Home";
-// import About from "./pages/About";
-// import React from 'react';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LaunchesProvider } from "./context/LaunchesContext";
 import LaunchPage from "./pages/LaunchPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
+//import LaunchesList from "./components/LaunchesList";
 
 function App() {
   return (
     <Router>
         <Navbar />
+
         <Routes>
-          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
-          <Route path="/launches" element={<LaunchPage />} />
+          <Route path="/Launches" element={<LaunchPage />} />
         </Routes>
     </Router>
   );

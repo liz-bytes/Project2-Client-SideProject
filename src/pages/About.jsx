@@ -3,28 +3,24 @@ import React from 'react';
 import './About.css'
 const VandenbergLaunchpad =() => {
   return(
-        <>
-        <div className="card">
-            <h2 className='card-tittle'>Vandenberg</h2>
-            <img
-            src="https://i.imgur.com/asp5L08.png"
-            alt="Vandenberg Launchpad"
-            className="card-image"
-            />
-            <p>
+    <>
+      <div className="card">
+        <h2 className='card-tittle'>Vandenberg</h2>
+        <img
+          src="https://i.imgur.com/asp5L08.png"
+          alt="Vandenberg Launchpad"
+          className="card-image"
+        />
+        <p>
 
-            Vandenberg Air Force Base in California serves as a major launch site for polar orbiting missions.
-            It has a rich history in spaceflight and plays a key role in launching satellites into orbit.
+        Vandenberg Air Force Base in California serves as a major launch site for polar orbiting missions.
+        It has a rich history in spaceflight and plays a key role in launching satellites into orbit.
 
-             </p>
+        </p>
 
-
-
-        </div>
-
-        </>
-    )
-
+      </div>
+    </>
+  )
 }
 
 const CapeCanaveral =() =>{
@@ -43,7 +39,6 @@ const CapeCanaveral =() =>{
 
     </div>
     )
-
 }
 
 const About = () => {
