@@ -1,6 +1,8 @@
 
 import React from 'react';
 import './About.css'
+import {Link} from 'react-router-dom';
+
 const VandenbergLaunchpad =() => {
   return(
     <>
@@ -17,6 +19,10 @@ const VandenbergLaunchpad =() => {
         It has a rich history in spaceflight and plays a key role in launching satellites into orbit.
 
         </p>
+
+        <Link className='space-link' to="https://rocketlaunch.org/launch-schedule/vandenberg-sfb" target="_blank" rel="noopener noreferrer">
+          Launch Schedule
+        </Link>
 
       </div>
     </>
@@ -36,6 +42,10 @@ const CapeCanaveral =() =>{
         Cape Canaveral in Florida is a historic launch site used by both NASA and commercial entities.
         It has been the starting point for many significant space missions, including those from SpaceX.
         </p>
+
+        <Link className='space-link' to="https://rocketlaunch.org/launch-schedule/cape-canaveral" target="_blank" rel="noopener noreferrer">
+          Launch Schedule
+        </Link>
 
     </div>
     )

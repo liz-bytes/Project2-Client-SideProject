@@ -100,7 +100,7 @@ const TodoLaunches = () => {
             value={taskInput}
             onChange={(e) => setTaskInput(e.target.value)}
           />
-          <button onClick={addTask}>Add</button>
+          <button className="add-btn" onClick={addTask}>Add</button>
         </div>
         <ul>
           {tasks.map((task, index) => (
@@ -117,8 +117,8 @@ const TodoLaunches = () => {
               ) : (
                 <>
                   {task}
-                  <button className="edit-btn" onClick={() => editTask(index)}>✏️ Edit</button>
-                  <button className="delete-btn" onClick={() => deleteTask(index)}>❌</button>
+                  <button className="edit-btn" onClick={() => editTask(index)}>Edit</button>
+                  <button className="delete-btn" onClick={() => deleteTask(index)}>Delete </button>
                 </>
               )}
             </li>
@@ -153,7 +153,7 @@ const TodoLaunches = () => {
             value={launchInput.t0Time}
             onChange={(e) => setLaunchInput({ ...launchInput, t0Time: e.target.value })}
           />
-          <button onClick={addLaunch}>Add</button>
+          <button className="add-btn" onClick={addLaunch}>Add</button>
         </div>
         <ul>
           {launches.map((launch, index) => (

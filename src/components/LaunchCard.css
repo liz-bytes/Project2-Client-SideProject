@@ -5,12 +5,17 @@
     background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8));
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 7.5px 12.5px;
     border-radius: 10px;
     font-size: 16px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+  }
+  .green-btn{
+    background: linear-gradient(135deg, rgba(40, 216, 75, 0.8), rgba(73, 135, 89, 0.8));
+
   }
 
   .space-button:hover {
@@ -38,4 +43,62 @@
 
   .space-card p {
     margin: 10px 0;
+  }
+  .space-link {
+    background: linear-gradient(135deg, rgba(3, 109, 133, 0.8), rgba(110, 222, 210, 0.8));
+    /* color: rgb(79, 125, 203); */
+    /* color: hsl(248, 53%, 58%); */
+    color: #fff;
+    padding: 6.5px 13px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    margin-right:20px;
+  }
+
+  .favorite-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+    justify-content: center; /* Center grid */
+    align-items: center; /* Align items */
+    padding: 20px;
+  }
+
+  /* Style for individual favorite items */
+  .favorite-card {
+    background: linear-gradient(135deg, rgba(3, 109, 133, 0.8), rgba(110, 222, 210, 0.8));
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* Hover effect */
+  .favorite-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+
+
+  a:link {
+    color: white; /* Default link color */
+  }
+
+  a:visited {
+    color: darkgray; /* Visited link */
+  }
+
+  a:hover {
+    color: crimson; /* Hover effect */
+  }
+
+  a:active {
+    color: orange; /* When clicked */
   }

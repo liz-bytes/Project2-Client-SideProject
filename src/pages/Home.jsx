@@ -76,7 +76,7 @@ const Home = () => {
       </div>
 
       <div className="SubMessage">
-        <p>Embark on a journey through the cosmos.<br />Discover SpaceX's missions, technology, and incredible launches.</p>
+        <p>Embark on a journey through the cosmos.<br /> <br/> <br />The Ultimate tool to Track SpaceX's missions, technology, and incredible launches.</p>
       </div>
 
       {/* Include the To-Do and Launch Tracker Component */}

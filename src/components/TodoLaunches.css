@@ -1,60 +1,147 @@
 .todo-launches-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 40px;
     width: 80%;
-    margin-top: 40px;
+    margin: 40px auto;
     flex-wrap: wrap;
 }
 
+/* Shared Styling for Sections */
 .todo-section, .launch-section {
-    width: 45%;
-    background: rgba(255, 255, 255, 0.1);
+    flex: 1;
+    min-width: 300px;
+    background: rgba(0, 0, 50, 0.5);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
+    transition: transform 2s ease-in-out;
 }
 
+/* Hover Effect */
+.todo-section:hover, .launch-section:hover {
+    transform: scale(1.02);
+}
+
+/* Section Headings */
 h2 {
     color: #00d2ff;
     margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
+/* Input Fields */
 .input-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 15px;
 }
 
 input {
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    transition: background 0.3s;
 }
 
+/* Input Field Hover */
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+/* Buttons */
 button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: #00d2ff;
     color: black;
+    font-weight: bold;
     cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.add-btn {
+    background: linear-gradient(90deg, #006400, #228B22);
+    color: black;
 }
 
+/* Button Hover Effect */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgb(86, 245, 94);
+}
+
+/* Task List */
 ul {
     list-style: none;
     padding: 0;
 }
 
 li {
-    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+/* List Hover Effect */
+li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Edit & Delete Buttons */
+.edit-btn, .delete-btn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.edit-btn {
+    background: linear-gradient(90deg, #FFFF00, #fbc531);
+    color: black;
 }
 
 .delete-btn {
-    background: red;
+    background: linear-gradient(90deg, #fb3131, rgba(255, 0, 0, 0.74));
     color: white;
-    cursor: pointer;
+}
+
+/* Button Hover Effects */
+.edit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8);
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+.todo-section, .launch-section {
+    animation: fadeIn 0.8s ease-in-out;
 }

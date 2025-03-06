@@ -1,0 +1,21 @@
+
+
+
+.remove-btn{
+
+    background: linear-gradient(135deg, rgba(228, 27, 27, 0.8), rgba(229, 80, 80, 0.8));
+    color: #fff;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+}
+/* .favorite-card{
+
+} */
+
