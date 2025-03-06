@@ -68,7 +68,8 @@ button {
 }
 .add-btn {
     background: linear-gradient(90deg, #006400, #228B22);
-    color: black;
+    color: white;
+    text-decoration: underline;
 }
 
 /* Button Hover Effect */

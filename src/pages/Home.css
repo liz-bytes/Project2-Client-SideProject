@@ -107,6 +107,7 @@ body::before {
     color: white;
     text-align: center;
     margin-top: 20px;
+    animation: fadeIn 2s forwards;
 }
 
 /* Fade-in Animation */

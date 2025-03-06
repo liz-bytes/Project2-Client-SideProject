@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './Favorite.css'
+import './Favorites.css'
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -16,10 +16,13 @@ const Favorites = () => {
   };
 
   return (
-    <div>
-      <h1>🚀 Your Favorite Launches</h1>
+    <div className="favorites-container">
+
+<h1 className="favorites-title">🚀 Your Favorite Launches</h1>
+
       {favorites.length > 0 ? (
-        favorites.map((launch) => (
+          <div className="favorite-grid">
+        {favorites.map((launch) => (
           <div key={launch.id} className="favorite-card">
             <h3>{launch.name}</h3>
             <p>Launch Date: {new Date(launch.date_utc).toLocaleString()}</p>
@@ -32,16 +35,17 @@ const Favorites = () => {
               />
             )}
 
-            <br />
+
             <button className="remove-btn" onClick={() => removeFromFavorites(launch.id)}>
               Remove
             </button>
           </div>
-        ))
+        ))}
+        </div>
       ) : (
         <p>No favorites saved yet!</p>
       )}
-    </div>
+      </div>
   );
 };
 

@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { LaunchesProvider } from "./context/LaunchesContext";
 import LaunchPage from "./pages/LaunchPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import NotFound from "./pages/NotFound";
 import Favorites from "./components/Favorites";
-//import LaunchesList from "./components/LaunchesList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +19,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
+
+        <Footer />
     </Router>
   );
 }

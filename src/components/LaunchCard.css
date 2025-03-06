@@ -60,31 +60,6 @@
     margin-right:20px;
   }
 
-  .favorite-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between grid items */
-    justify-content: center; /* Center grid */
-    align-items: center; /* Align items */
-    padding: 20px;
-  }
-
-  /* Style for individual favorite items */
-  .favorite-card {
-    background: linear-gradient(135deg, rgba(3, 109, 133, 0.8), rgba(110, 222, 210, 0.8));
-    color: white;
-    text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    transition: transform 0.2s ease-in-out;
-  }
-
-  /* Hover effect */
-  .favorite-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-  }
 
 
   a:link {
