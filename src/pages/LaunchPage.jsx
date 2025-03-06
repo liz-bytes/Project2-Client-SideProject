@@ -29,7 +29,7 @@ function LaunchPage() {
   return (
     <>
      <div className="space-theme">
-      <h2>Space Force Launch Locations</h2>
+      <h2>Space Force Launches</h2>
 
       {!selectedLocation ? (
         <div className="location-options">
