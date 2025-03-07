@@ -188,7 +188,9 @@ The project uses:
 
 [Screenshot Description](public/Screenshot2.png)
 
-<img src="/Screenshot3.png" width="600">
+<img src="Screenshot3.png" width="600">
+
+<img src="https://github.com/liz-bytes/Project2-Client-SideProject/tree/main/public/Screenshot3.png" width="600">
 
 ![Screenshot Description](public/Screenshot3.png)
 
