@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./TodoLaunches.css";
 
 const TodoLaunches = () => {
-  // Load saved data from localStorage or initialize with empty array
   const getSavedTasks = () => JSON.parse(localStorage.getItem("tasks")) || [];
   const getSavedLaunches = () => JSON.parse(localStorage.getItem("launches")) || [];
 
-  // State for To-Do List
   const [tasks, setTasks] = useState(getSavedTasks);
   const [taskInput, setTaskInput] = useState("");
   const [editingTaskIndex, setEditingTaskIndex] = useState(null);
   const [editedTask, setEditedTask] = useState("");
 
-  // State for Upcoming Launches
   const [launches, setLaunches] = useState(getSavedLaunches);
   const [launchInput, setLaunchInput] = useState({
     name: "",
@@ -23,7 +20,6 @@ const TodoLaunches = () => {
   const [editingLaunchIndex, setEditingLaunchIndex] = useState(null);
   const [editedLaunch, setEditedLaunch] = useState(null);
 
-  // Save to localStorage whenever tasks or launches change
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -32,7 +28,6 @@ const TodoLaunches = () => {
     localStorage.setItem("launches", JSON.stringify(launches));
   }, [launches]);
 
-  // Add Task
   const addTask = () => {
     if (taskInput.trim() === "") return;
     const updatedTasks = [...tasks, taskInput];
@@ -40,13 +35,12 @@ const TodoLaunches = () => {
     setTaskInput("");
   };
 
-  // Edit Task
+
   const editTask = (index) => {
     setEditingTaskIndex(index);
     setEditedTask(tasks[index]);
   };
 
-  // Save Edited Task
   const saveEditedTask = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index] = editedTask;
@@ -54,13 +48,11 @@ const TodoLaunches = () => {
     setEditingTaskIndex(null);
   };
 
-  // Delete Task
   const deleteTask = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   };
 
-  // Add Launch
   const addLaunch = () => {
     if (!launchInput.name || !launchInput.date || !launchInput.location || !launchInput.t0Time) return;
     const updatedLaunches = [...launches, launchInput];
@@ -68,13 +60,11 @@ const TodoLaunches = () => {
     setLaunchInput({ name: "", date: "", location: "", t0Time: "" });
   };
 
-  // Edit Launch
   const editLaunch = (index) => {
     setEditingLaunchIndex(index);
     setEditedLaunch({ ...launches[index] });
   };
 
-  // Save Edited Launch
   const saveEditedLaunch = (index) => {
     const updatedLaunches = [...launches];
     updatedLaunches[index] = editedLaunch;
@@ -82,7 +72,6 @@ const TodoLaunches = () => {
     setEditingLaunchIndex(null);
   };
 
-  // Delete Launch
   const deleteLaunch = (index) => {
     const updatedLaunches = launches.filter((_, i) => i !== index);
     setLaunches(updatedLaunches);
@@ -90,8 +79,7 @@ const TodoLaunches = () => {
 
   return (
     <div className="todo-launches-container">
-      {/* To-Do List Section */}
-      <div className="todo-section">
+       <div className="todo-section">
         <h2>🚀 Mission To-Do List</h2>
         <div className="input-container">
           <input
@@ -126,7 +114,6 @@ const TodoLaunches = () => {
         </ul>
       </div>
 
-      {/* Upcoming Launches Section */}
       <div className="launch-section">
         <h2>📅 Upcoming Launches</h2>
         <div className="input-container">
@@ -198,5 +185,3 @@ const TodoLaunches = () => {
 };
 
 export default TodoLaunches;
-
-

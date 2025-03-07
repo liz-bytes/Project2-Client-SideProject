@@ -1,18 +1,17 @@
 import React from "react";
 import './LaunchCard.css'
-import { useState, useEffect } from "react";
 
 function LaunchCard({ launch, onBack }) {
   const saveToFavorites = () => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []; //  Get existing favorites
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const isAlreadyFavorite = storedFavorites.some(
       (fav) => fav.id === launch.id
-    ); // Prevent duplicates
+    );
 
     if (!isAlreadyFavorite) {
       const updatedFavorites = [...storedFavorites, launch];
-      localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Save to local storage
-      alert("Added to Favorites! 🚀"); // Confirmation message
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      alert("Added to Favorites! 🚀");
     } else {
       alert("This launch is already in Favorites! ⭐");
     }
@@ -73,7 +72,6 @@ function LaunchCard({ launch, onBack }) {
       <br />
       <br />
 
-      {/*  New Save to Favorites Button */}
       <button onClick={saveToFavorites} className="space-button green-btn">
         Save to Favorites
       </button>

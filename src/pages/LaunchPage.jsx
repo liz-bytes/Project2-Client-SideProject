@@ -47,11 +47,13 @@ function LaunchPage() {
         <>
           {selectedLaunch ? (
             <LaunchCard launch={selectedLaunch} onBack={handleGoBack} />
-          ) : (
+          ) :
+          (
             <LaunchesList handleLaunchClick={handleLaunchClick} onBackToLocation={handleGoBackToLocation}/>
           )}
         </>
-      )}
+      )
+      }
 
       {isLoading && <p>Loading launches...</p>}
       {error && <p>Error fetching launches: {error}</p>}

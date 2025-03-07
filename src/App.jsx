@@ -26,36 +26,3 @@ function App() {
 }
 
 export default App;
-
-
-// //useEffect to resize the window
-// export default function App(){
-//   const[windowWidth, setWindowWidth] = useState(window.innerWidth)
-//   const [windowHeight, setWindowHeight] = useState(window.innerHeight)
-
-//   const handleWidthResize=() =>{
-//     setWindowWidth(window.innerWidth)
-//   }
-//   const handleHeightResize=() =>{
-//     setWindowHeight(window.innerHeight)
-//   }
-//   useEffect(() => {
-//     window.addEventListener('resize', handleWidthResize)
-//     return () => {
-//       window.removeEventListener('resize', handleWidthResize)
-//       //cleanup function, this will run when the component is unmounted
-//       //or when the component is re-rendered.This prevents memory leaks
-//     }
-//   },[])// empty array means it will run only once when the component is mounted
-//   useEffect(()=>{
-//     window.addEventListener('resize', handleHeightResize)
-//     return () => {
-//       window.removeEventListener('resize', handleHeightResize)
-//     }
-//   },[])
-//   return(
-//     <div>{windowWidth} Width
-//       <div>{windowHeight} Height</div>
-//     </div>
-//   )
-// }

@@ -5,14 +5,14 @@ const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []; //  Load from local storage
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
   }, []);
 
   const removeFromFavorites = (id) => {
     const updatedFavorites = favorites.filter((launch) => launch.id !== id);
     setFavorites(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); //  Update local storage
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
   return (

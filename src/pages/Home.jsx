@@ -22,13 +22,12 @@ const Home = () => {
       <div className="video-box">
         <video ref={videoRef} autoPlay loop muted controls className="main-video">
           <source src="/Spacex-Launch720p.mp4" type="video/mp4" />
-          <source src="/Spacex-Launch720p.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </div>
 
       <div className="SubMessage">
-        <p>Embark on a journey through the cosmos.<br /> <br/> <br />The Ultimate tool to Track SpaceX's missions, technology, and incredible launches.</p>
+        <p>Embark on a journey through the cosmos.<br /> <br />The Ultimate tool to Track SpaceX's missions, technology, and incredible launches.</p>
       </div>
 
       <TodoLaunches />
