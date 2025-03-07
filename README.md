@@ -184,13 +184,13 @@ The project uses:
 
 ## Screenshots
 
-![Screenshot Description](/public/Screenshot1.png)
+![Screenshot Description](/Screenshot1.png)
 
-![Screenshot Description](/public/Screenshot2.png)
+![Screenshot Description](/Screenshot2.png)
 
-![Screenshot Description](/public/Screenshot3.png)
+![Screenshot Description](/Screenshot3.png)
 
-![Screenshot Description](/public/Screenshot4.png)
+![Screenshot Description](/Screenshot4.png)
 
 ## 🤝 Contributing
 
