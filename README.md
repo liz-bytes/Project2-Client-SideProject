@@ -184,19 +184,7 @@ The project uses:
 
 ## Screenshots
 
-![Screenshot Description](public/Screenshot1.jpg)
-
-[Screenshot Description](public/Screenshot2.png)
-
-<img src="Screenshot3.png" width="600">
-
-<img src="https://github.com/liz-bytes/Project2-Client-SideProject/tree/main/public/Screenshot3.png" width="600">
-
-<img src="https://github.com/liz-bytes/Project2-Client-SideProject/tree/main/public/Screenshot1.jpg" width="600">
-
-![Screenshot Description](public/Screenshot3.png)
-
-![Screenshot Description](public/Screenshot4.png)
+**See public folder**
 
 ## 🤝 Contributing
 
