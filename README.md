@@ -184,7 +184,7 @@ The project uses:
 
 ## Screenshots
 
-![Screenshot Description](public/Screenshot1.png)
+![Screenshot Description](public/Screenshot1.jpg)
 
 ![Screenshot Description](public/Screenshot2.png)
 
