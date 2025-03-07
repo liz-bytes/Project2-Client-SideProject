@@ -192,6 +192,8 @@ The project uses:
 
 <img src="https://github.com/liz-bytes/Project2-Client-SideProject/tree/main/public/Screenshot3.png" width="600">
 
+<img src="https://github.com/liz-bytes/Project2-Client-SideProject/tree/main/public/Screenshot1.jpg" width="600">
+
 ![Screenshot Description](public/Screenshot3.png)
 
 ![Screenshot Description](public/Screenshot4.png)
