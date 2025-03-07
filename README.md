@@ -180,7 +180,7 @@ The project uses:
 
 ## Notion Link
 
-[![Notion App](https://img.shields.io/badge/Notion-App-blue)](https://www.notion.so/LINKS-1ab5b9eed32c8037bb7de90ff53b64b1?pvs=4)
+[![Notion App](https://img.shields.io/badge/Notion-App-blue)](https://www.notion.so/1ab5b9eed32c80429742e4c20063429c?v=1ab5b9eed32c818dae79000c6da6a7a2&pvs=4)
 
 ## Screenshots
 
