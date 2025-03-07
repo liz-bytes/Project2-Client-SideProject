@@ -188,7 +188,7 @@ The project uses:
 
 [Screenshot Description](public/Screenshot2.png)
 
-<img src="public/Screenshot3.png" width="600">
+<img src="/Screenshot3.png" width="600">
 
 ![Screenshot Description](public/Screenshot3.png)
 
